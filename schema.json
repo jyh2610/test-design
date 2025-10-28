@@ -1,0 +1,38 @@
+{
+  "Button": {
+    "description": "기본 버튼 컴포넌트",
+    "props": {
+      "variant": ["primary", "secondary"],
+      "size": ["sm", "md", "lg"],
+      "disabled": "boolean",
+      "onClick": "function"
+    }
+  },
+  "Input": {
+    "description": "기본 입력 필드",
+    "props": {
+      "placeholder": "string",
+      "value": "string",
+      "onChange": "function"
+    }
+  },
+  "Text": {
+    "description": "텍스트 출력용 컴포넌트",
+    "props": {
+      "size": ["sm", "md", "lg"],
+      "weight": ["regular", "bold"],
+      "color": ["default", "muted", "light"]
+    }
+  },
+  "ColorBox": {
+    "description": "색상 블록 표시용 컴포넌트",
+    "props": { "color": "string", "label": "string" }
+  },
+  "Board": {
+    "description": "간단한 게시판 리스트 컴포넌트",
+    "props": {
+      "posts": "Array<{id:number,title:string,author:string}>",
+      "onSelect": "function"
+    }
+  }
+}
