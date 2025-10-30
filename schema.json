@@ -1,38 +1,112 @@
 {
   "Button": {
-    "description": "기본 버튼 컴포넌트",
+    "description": "범정부 UI/UX 가이드를 준수하는 기본 버튼 컴포넌트",
     "props": {
-      "variant": ["primary", "secondary"],
+      "variant": ["primary", "secondary", "tertiary", "outlined", "text"],
       "size": ["sm", "md", "lg"],
       "disabled": "boolean",
-      "onClick": "function"
-    }
+      "fullWidth": "boolean",
+      "onClick": "function",
+      "children": "ReactNode"
+    },
+    "accessibility": "WCAG AA 준수, 키보드 접근 가능"
   },
   "Input": {
-    "description": "기본 입력 필드",
+    "description": "접근성을 고려한 기본 입력 필드 컴포넌트",
     "props": {
       "placeholder": "string",
       "value": "string",
-      "onChange": "function"
-    }
+      "onChange": "function",
+      "type": ["text", "email", "password", "number"],
+      "disabled": "boolean",
+      "error": "boolean",
+      "helperText": "string",
+      "label": "string"
+    },
+    "accessibility": "레이블 연결, 에러 상태 명확한 표시"
   },
   "Text": {
-    "description": "텍스트 출력용 컴포넌트",
+    "description": "일관된 타이포그래피를 위한 텍스트 컴포넌트",
     "props": {
-      "size": ["sm", "md", "lg"],
-      "weight": ["regular", "bold"],
-      "color": ["default", "muted", "light"]
-    }
+      "size": ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
+      "weight": ["regular", "medium", "semibold", "bold"],
+      "color": ["default", "secondary", "tertiary", "light", "disabled"],
+      "as": ["p", "span", "div", "h1", "h2", "h3", "h4", "h5", "h6"],
+      "align": ["left", "center", "right"],
+      "children": "ReactNode"
+    },
+    "font": "Pretendard GOV / Noto Sans KR"
   },
   "ColorBox": {
-    "description": "색상 블록 표시용 컴포넌트",
-    "props": { "color": "string", "label": "string" }
+    "description": "디자인 시스템 색상 팔레트 표시용 컴포넌트",
+    "props": {
+      "color": "string",
+      "label": "string",
+      "size": ["sm", "md", "lg"]
+    }
   },
   "Board": {
-    "description": "간단한 게시판 리스트 컴포넌트",
+    "description": "정부 웹사이트용 게시판 리스트 컴포넌트",
     "props": {
-      "posts": "Array<{id:number,title:string,author:string}>",
-      "onSelect": "function"
-    }
+      "posts": "Array<{id:number, title:string, author:string, date?:string, views?:number}>",
+      "onSelect": "function",
+      "showHeader": "boolean"
+    },
+    "accessibility": "키보드 네비게이션 지원, 호버 상태 명확"
+  },
+  "Card": {
+    "description": "콘텐츠 그룹화를 위한 카드 컴포넌트",
+    "props": {
+      "title": "string",
+      "children": "ReactNode",
+      "shadow": ["sm", "md", "lg", "xl"],
+      "padding": ["sm", "md", "lg", "xl"],
+      "hoverable": "boolean",
+      "onClick": "function"
+    },
+    "design": "Corner radius 20px 기준"
+  },
+  "Badge": {
+    "description": "상태 표시를 위한 뱃지 컴포넌트",
+    "props": {
+      "variant": ["primary", "success", "warning", "error", "info", "neutral"],
+      "size": ["sm", "md", "lg"],
+      "outlined": "boolean",
+      "children": "ReactNode"
+    },
+    "colors": "시스템 색상 준수 (Key, Point, System)"
+  },
+  "Alert": {
+    "description": "사용자 알림을 위한 경고/안내 컴포넌트",
+    "props": {
+      "variant": ["success", "warning", "error", "info"],
+      "title": "string",
+      "closable": "boolean",
+      "onClose": "function",
+      "children": "ReactNode"
+    },
+    "accessibility": "role='alert' 속성 포함"
+  },
+  "Checkbox": {
+    "description": "선택 입력을 위한 체크박스 컴포넌트",
+    "props": {
+      "checked": "boolean",
+      "onChange": "function",
+      "label": "string",
+      "disabled": "boolean"
+    },
+    "accessibility": "레이블 연결, 키보드 접근 가능"
+  },
+  "Select": {
+    "description": "드롭다운 선택을 위한 셀렉트 컴포넌트",
+    "props": {
+      "options": "Array<{value:string, label:string}>",
+      "value": "string",
+      "onChange": "function",
+      "placeholder": "string",
+      "disabled": "boolean",
+      "label": "string"
+    },
+    "accessibility": "레이블 연결, 키보드 네비게이션"
   }
 }
